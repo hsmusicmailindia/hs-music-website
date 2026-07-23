@@ -632,9 +632,6 @@ img {
 }
 .course-icon {
   align-items: center;
-  background: rgba(213, 170, 74, 0.12);
-  border: 1px solid rgba(213, 170, 74, 0.3);
-  border-radius: 50%;
   color: var(--gold);
   display: flex;
   font-size: 1.3rem;
