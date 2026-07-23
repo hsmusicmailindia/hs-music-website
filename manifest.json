@@ -1,0 +1,18 @@
+{
+  "name": "HS MUSIC Academy",
+  "short_name": "HS MUSIC",
+  "description": "Music and dance education in Prayagraj.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "assets/images/hs-music-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
