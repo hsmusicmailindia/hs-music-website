@@ -1440,3 +1440,22 @@ font-weight:bold;
     margin-bottom:6px;
     color:#333;
 }
+.course-icon{
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.course-icon img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+  display:block;
+}
+
+.course-icon i{
+  font-size:28px !important;
+  line-height:1;
+}
