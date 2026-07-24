@@ -1359,26 +1359,29 @@ img {
 /* ================= Floating Video ================= */
 
 #watch-btn{
-position:absolute;
-top:110px;
-right:25px;
-background:#d60000;
-color:#fff;
-padding:14px 18px;
-border-radius:50px;
-font-size:15px;
-font-weight:700;
-cursor:pointer;
-z-index:9999;
-box-shadow:0 8px 25px rgba(0,0,0,.35);
-transition:.3s;
+  align-items:center;
+  background:#ff0000;
+  border:0;
+  border-radius:50%;
+  bottom:28px;
+  box-shadow:0 8px 26px rgba(255,0,0,.4);
+  color:#fff;
+  display:flex;
+  font-size:1.35rem;
+  height:52px;
+  justify-content:center;
+  position:fixed;
+  right:92px;
+  width:52px;
+  z-index:999;
+  cursor:pointer;
+  transition:.3s;
 }
 
 #watch-btn:hover{
-background:#b00000;
-transform:translateY(-3px);
+  color:#fff;
+  transform:translateY(-3px);
 }
-
 #video-popup{
 display:none;
 position:fixed;
@@ -1455,4 +1458,10 @@ font-weight:bold;
 .course-icon i{
   font-size:28px !important;
   line-height:1;
+}
+@media(max-width:575.98px){
+  #watch-btn{
+    right:78px;
+    bottom:14px;
+  }
 }
