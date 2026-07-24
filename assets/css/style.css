@@ -1553,3 +1553,16 @@ font-weight:bold;
   font-style: normal;
   line-height: 1.65;
 }
+
+/* Home review cards: show review text clearly and keep content top-aligned. */
+#testimonials .compact-review {
+  justify-content: flex-start;
+}
+#testimonials .compact-review p {
+  margin: 16px 0 20px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.65;
+}
+#testimonials .compact-review strong {
+  margin-top: auto;
+}
