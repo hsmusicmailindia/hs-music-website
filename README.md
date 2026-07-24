@@ -21,7 +21,7 @@ Open the project folder with any static web server, then visit `index.html`. For
 
 The site has no personally supplied contact details. Replace each occurrence of `919000000000` in the HTML files with the Academy's live WhatsApp number in international format (without `+` or spaces). Add the correct social media URLs in place of the `#` links.
 
-The contact form has client-side validation and a success state for the static demo. Connect it to the preferred form service or backend before collecting enquiries. The canonical URLs, `robots.txt`, and `sitemap.xml` currently use `https://hsmusicacademy.in`; update all three if the live domain differs.
+The contact form has client-side validation and a success state for the static demo. Connect it to the preferred form service or backend before collecting enquiries. The canonical URLs, `robots.txt`, and `sitemap.xml` currently use `https://hsmusic.in`; update all three if the live domain differs.
 
 ## Production notes
 
