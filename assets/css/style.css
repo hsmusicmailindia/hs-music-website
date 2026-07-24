@@ -1465,3 +1465,57 @@ font-weight:bold;
     bottom:14px;
   }
 }
+
+/* ===== HS MUSIC final fixes: red & black theme ===== */
+.site-logo{height:76px!important;width:auto;max-width:190px;object-fit:contain}
+@media(max-width:991.98px){.site-logo{height:64px!important;max-width:165px}}
+@media(max-width:575.98px){.site-logo{height:58px!important;max-width:150px}}
+
+/* Keep the people in the About hero image visible */
+.page-about .page-hero-bg{background-position:center 68%!important}
+
+/* Stable home course grid */
+#courses .course-card{height:100%;min-height:365px;display:flex;flex-direction:column;overflow:hidden}
+#courses .course-card .course-icon{width:46px;height:46px;margin-bottom:28px;display:flex;align-items:center;justify-content:center}
+#courses .course-card .course-icon img{width:42px;height:42px;object-fit:contain}
+#courses .course-card .course-levels{margin-top:auto}
+#courses .row>div{display:flex}
+@media(max-width:767.98px){#courses .course-card{min-height:330px}}
+
+/* Floating actions: YouTube and WhatsApp aligned side-by-side */
+.quick-actions{flex-direction:row!important;align-items:center!important;gap:12px!important}
+.quick-actions .call-action{order:1}
+.quick-actions #watch-btn{order:2}
+.quick-actions .whatsapp-action{order:3}
+#watch-btn{position:static!important;width:52px!important;height:52px!important;min-width:52px;border:0;border-radius:50%;background:#ff0000;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.35rem;box-shadow:0 8px 26px rgba(255,0,0,.4);cursor:pointer;transition:.3s;z-index:auto}
+#watch-btn:hover{background:#c90000;transform:translateY(-3px)}
+@media(max-width:575.98px){.quick-actions{gap:10px!important}.quick-actions .call-action{width:52px!important;height:52px!important;padding:0!important}.quick-actions .call-action span{display:none}}
+
+/* Studio page */
+.page-studio .page-hero-bg{background-image:url("../images/studio/studio-1.jpg");background-position:center 55%}
+.studio-gallery-card{display:block;position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.1);height:100%}
+.studio-gallery-card img{width:100%;height:300px;object-fit:cover;transition:transform .45s ease}
+.studio-gallery-card:hover img{transform:scale(1.045)}
+.studio-gallery-card::after{content:"View";position:absolute;right:16px;bottom:14px;background:#e31b23;color:#fff;padding:7px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.studio-service-card{height:100%;background:#141414;border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+.studio-service-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:#e31b23}
+.studio-service-card h3{font-size:1.1rem;margin-bottom:10px}
+.studio-price{color:#ff3840;font-size:1.05rem;font-weight:800}
+.studio-booking{background:linear-gradient(135deg,#171717,#090909);border:1px solid rgba(227,27,35,.35);border-radius:24px;padding:clamp(28px,5vw,58px)}
+.studio-records{background:linear-gradient(135deg,rgba(227,27,35,.14),rgba(255,255,255,.02));border:1px solid rgba(227,27,35,.28);border-radius:24px;padding:clamp(28px,5vw,55px)}
+
+/* Courses page: real classroom vibe gallery */
+.class-vibe-section{background:#080808;color:#fff;position:relative;overflow:hidden}
+.class-vibe-section::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 20%,rgba(227,27,35,.14),transparent 34%);pointer-events:none}
+.class-vibe-section .container{position:relative;z-index:1}
+.class-vibe-section .section-title,.class-vibe-section .section-copy{color:#fff}
+.class-vibe-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:250px;gap:18px}
+.class-vibe-card{position:relative;display:block;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:#151515;box-shadow:0 18px 45px rgba(0,0,0,.26)}
+.class-vibe-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.86) 100%);pointer-events:none}
+.class-vibe-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease,filter .55s ease}
+.class-vibe-card span{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff;font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.class-vibe-card:hover img{transform:scale(1.045);filter:saturate(1.08)}
+.class-vibe-wide{grid-column:span 2}
+.class-vibe-tall{grid-row:span 2}
+@media(max-width:991.98px){.class-vibe-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:230px}.class-vibe-tall{grid-row:span 1}}
+@media(max-width:575.98px){.class-vibe-grid{grid-template-columns:1fr;grid-auto-rows:220px;gap:14px}.class-vibe-wide{grid-column:span 1}.class-vibe-card{border-radius:15px}.class-vibe-card span{left:15px;bottom:13px}}
