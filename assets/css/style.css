@@ -1566,3 +1566,37 @@ font-weight:bold;
 #testimonials .compact-review strong {
   margin-top: auto;
 }
+
+
+/* HS MUSIC course landing system */
+.course-landing-hero{align-items:end;background:#070707;display:flex;min-height:780px;overflow:hidden;padding:145px 0 78px;position:relative}
+.course-landing-hero .landing-bg{background-image:url("../images/landing/folk-dance-bluemoon.webp");background-position:center 38%;background-size:cover;inset:0;position:absolute}
+.course-landing-hero::before{background:linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.82) 38%,rgba(0,0,0,.42) 72%,rgba(0,0,0,.28) 100%),linear-gradient(0deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.12) 60%),rgba(0,0,0,.18);content:"";inset:0;position:absolute;z-index:1}
+.course-landing-hero::after{background:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),rgba(255,255,255,.045) 25%);content:"";inset:0 8%;pointer-events:none;position:absolute;z-index:1}
+.course-landing-hero .container{position:relative;z-index:2}
+.course-landing-hero h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(4rem,8vw,7.5rem);font-weight:600;letter-spacing:-.068em;line-height:.9;margin:0;max-width:900px}
+.course-landing-hero h1 em{color:var(--gold);font-weight:500}
+.course-landing-hero .hero-copy{max-width:610px}
+.course-landing-actions{display:flex;flex-wrap:wrap;gap:14px}
+.landing-stat-row{display:flex;flex-wrap:wrap;gap:30px;margin-top:42px}
+.landing-stat{border-left:1px solid var(--gold);padding-left:15px;min-width:155px}
+.landing-stat strong{display:block;font-family:"Playfair Display",serif;font-size:1.7rem;line-height:1.1}
+.landing-stat span{color:var(--muted);font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.branch-grid{display:grid;gap:24px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.branch-card{background:#fff;border:1px solid rgba(8,8,8,.12);padding:38px;position:relative;transition:.3s}
+.branch-card:hover{box-shadow:0 22px 50px rgba(0,0,0,.12);transform:translateY(-5px)}
+.branch-card .branch-number{color:var(--gold);font-family:"Playfair Display",serif;font-size:3.2rem;line-height:1}
+.branch-card h2{color:#080808;font-family:"Playfair Display",serif;font-size:2rem;margin:18px 0 12px}
+.branch-card p{color:#625f59}
+.detail-list{list-style:none;margin:0;padding:0}
+.detail-list li{border-bottom:1px solid rgba(255,255,255,.12);display:flex;gap:13px;padding:14px 0}
+.detail-list i{color:var(--gold)}
+.curriculum-card{background:#fff;border:1px solid rgba(0,0,0,.09);height:100%;padding:28px}
+.curriculum-card i{color:var(--gold);font-size:1.6rem}
+.curriculum-card h3{color:#080808;font-family:"Playfair Display",serif;margin:17px 0 10px}
+.curriculum-card p{color:#625f59;margin:0}
+.branch-switcher{align-items:center;background:#111;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding:22px 26px}
+.branch-switcher p{margin:0}
+.map-frame iframe{border:0;height:430px;width:100%}
+.course-card-action{margin-top:20px}
+@media(max-width:767.98px){.course-landing-hero{min-height:720px;padding-top:130px}.course-landing-hero .landing-bg{background-position:58% center}.course-landing-hero::before{background:linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.58)),linear-gradient(0deg,rgba(0,0,0,.9),transparent 58%)}.branch-grid{grid-template-columns:1fr}.branch-card{padding:28px}.landing-stat-row{gap:20px}.course-landing-hero h1{font-size:clamp(3.4rem,16vw,5.2rem)}}
