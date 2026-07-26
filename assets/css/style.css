@@ -1600,3 +1600,32 @@ font-weight:bold;
 .map-frame iframe{border:0;height:430px;width:100%}
 .course-card-action{margin-top:20px}
 @media(max-width:767.98px){.course-landing-hero{min-height:720px;padding-top:130px}.course-landing-hero .landing-bg{background-position:58% center}.course-landing-hero::before{background:linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.58)),linear-gradient(0deg,rgba(0,0,0,.9),transparent 58%)}.branch-grid{grid-template-columns:1fr}.branch-card{padding:28px}.landing-stat-row{gap:20px}.course-landing-hero h1{font-size:clamp(3.4rem,16vw,5.2rem)}}
+
+
+/* Branch location card — landing page visibility and actions */
+.branch-location-card{
+  align-items:center;
+  background:linear-gradient(135deg,#151515 0%,#0b0b0b 100%);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 18px 48px rgba(0,0,0,.18);
+  gap:28px;
+  padding:30px;
+}
+.branch-location-copy{flex:1 1 320px;min-width:0}
+.branch-location-card .section-label{align-items:center;color:var(--gold);display:inline-flex;gap:8px;margin-bottom:12px}
+.branch-location-card h3{color:#fff;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.55rem,2.4vw,2.15rem);margin:0 0 8px}
+.branch-location-card .branch-address,
+.branch-location-card p,
+.branch-location-card strong,
+.branch-location-card a:not(.btn){color:rgba(255,255,255,.78)!important}
+.branch-location-card .branch-address{font-size:.96rem;line-height:1.7;margin:0;max-width:560px}
+.branch-location-actions{align-items:center;display:flex;flex:0 1 auto;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.branch-location-card .btn-outline-light{align-items:center;border-color:rgba(255,255,255,.42);color:#fff!important;display:inline-flex;gap:9px;white-space:nowrap}
+.branch-location-card .btn-outline-light:visited{color:#fff!important}
+.branch-location-card .btn-outline-light:hover,
+.branch-location-card .btn-outline-light:focus{background:#fff;border-color:#fff;color:#0b0b0b!important}
+.branch-icon-link{align-items:center;border:1px solid rgba(255,255,255,.16);display:inline-flex;font-size:.78rem;font-weight:700;gap:8px;letter-spacing:.06em;padding:13px 15px;text-decoration:none;text-transform:uppercase;transition:.25s}
+.branch-icon-link:hover,.branch-icon-link:focus{background:rgba(227,27,35,.14);border-color:rgba(227,27,35,.55);color:#fff!important}
+.branch-icon-link i{color:var(--gold);font-size:1rem}
+@media(max-width:991.98px){.branch-location-actions{justify-content:flex-start;width:100%}}
+@media(max-width:575.98px){.branch-location-card{padding:24px}.branch-location-actions{align-items:stretch;flex-direction:column}.branch-location-card .btn-outline-light,.branch-icon-link{justify-content:center;width:100%}}
