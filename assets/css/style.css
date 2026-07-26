@@ -1629,3 +1629,20 @@ font-weight:bold;
 .branch-icon-link i{color:var(--gold);font-size:1rem}
 @media(max-width:991.98px){.branch-location-actions{justify-content:flex-start;width:100%}}
 @media(max-width:575.98px){.branch-location-card{padding:24px}.branch-location-actions{align-items:stretch;flex-direction:column}.branch-location-card .btn-outline-light,.branch-icon-link{justify-content:center;width:100%}}
+
+/* Beginners Singing landing pages */
+.singing-landing-hero .landing-bg{background-image:url("../images/landing/beginners-singing-bluemoon.jpg");background-position:center 35%}
+.shaped-card,.learning-card,.faq-card,.final-cta{border-radius:24px;overflow:hidden}
+.branch-card{border-radius:24px}.course-feature{border-radius:24px}.course-card-action{margin-top:24px}
+.learning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.learning-grid-six{grid-template-columns:repeat(3,minmax(0,1fr))}
+.learning-card{background:#171717;border:1px solid rgba(255,255,255,.12);padding:28px;transition:.3s}.learning-card:hover{transform:translateY(-5px);border-color:rgba(227,27,35,.65)}.learning-card i{color:var(--gold);font-size:1.8rem}.learning-card h3{font-family:"Playfair Display",serif;font-size:1.45rem;margin:18px 0 8px}.learning-card p{color:rgba(255,255,255,.68);margin:0}
+.dark-branch-card{background:#101010;color:#fff;padding:38px}.dark-branch-card h3{font-family:"Playfair Display",serif;font-size:2rem;margin:18px 0}.dark-branch-card p,.dark-branch-card p i{color:rgba(255,255,255,.78)}.branch-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.trainer-card img{display:block;height:560px;object-fit:cover;width:100%}.light-list li{color:#24211f}
+.performance-section{background:#090909}.journey-card{background:#151515;border:1px solid rgba(255,255,255,.12);display:grid;gap:0;padding:15px 32px}.journey-card span{border-bottom:1px solid rgba(255,255,255,.1);font-family:"Playfair Display",serif;font-size:1.45rem;padding:19px 0}.journey-card span:last-child{border:0}
+.faq-wrap{display:grid;gap:14px}.faq-card{background:#fff;border:1px solid rgba(8,8,8,.12);padding:0 28px}.faq-card summary{align-items:center;color:#111;cursor:pointer;display:flex;font-family:"Playfair Display",serif;font-size:1.25rem;justify-content:space-between;list-style:none;padding:24px 0}.faq-card summary::-webkit-details-marker{display:none}.faq-card p{color:#625f59;padding:0 0 24px;margin:0}.final-cta{background:#151515;border:1px solid rgba(255,255,255,.12);padding:68px 30px;text-align:center}.final-cta h2{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,5vw,4.6rem)}.final-cta p{color:rgba(255,255,255,.7);margin:18px auto 28px;max-width:620px}.back-to-courses{color:#fff;display:inline-flex;gap:8px;margin-bottom:25px}.back-to-courses:hover{color:var(--gold)}
+@media(max-width:991.98px){.learning-grid-six{grid-template-columns:repeat(2,minmax(0,1fr))}.trainer-card img{height:460px}}
+@media(max-width:767.98px){.singing-landing-hero .landing-bg{background-position:62% center}.learning-grid,.learning-grid-six{grid-template-columns:1fr}.dark-branch-card{padding:28px}.branch-actions .btn{width:100%}.trainer-card img{height:400px}.final-cta{padding:48px 22px}.shaped-card,.learning-card,.faq-card,.final-cta,.branch-card,.course-feature{border-radius:20px}}
+
+.bollywood-landing-hero .landing-bg{background-image:url("../images/landing/bollywood-dance-bluemoon.jpg");background-position:center 38%}
+@media(max-width:767.98px){.bollywood-landing-hero .landing-bg{background-position:58% center}}
+.course-card-action.multi-action{display:flex;flex-wrap:wrap;gap:12px}.course-card-action.multi-action .btn{flex:1;min-width:180px}
