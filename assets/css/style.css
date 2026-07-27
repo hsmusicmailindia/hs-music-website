@@ -1667,3 +1667,86 @@ font-weight:bold;
 @media (max-width:767px){
   .playback-hero-final{background-position:63% center!important;}
 }
+
+/* HS MUSIC final visibility and typography fixes — 2026-07-27 */
+.event-card .event-detail h3,
+.event-card .event-detail h3 a {
+  color: #ffffff !important;
+}
+.event-card .event-detail p,
+.event-card .event-meta {
+  color: #c8c3ba !important;
+}
+.event-card .event-detail .eyebrow {
+  color: var(--gold) !important;
+}
+.page-studio .page-hero h1,
+.page-studio .page-hero h1 em {
+  font-family: "Playfair Display", serif !important;
+}
+.page-studio .page-hero h1 {
+  font-weight: 600 !important;
+  letter-spacing: -0.065em !important;
+  line-height: 0.95 !important;
+}
+.page-studio .page-hero h1 em {
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+.page-studio .page-hero .hero-copy,
+.page-studio .page-hero .crumbs,
+.page-studio .page-hero .btn {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+/* Playback hero uses a real image element, avoiding background URL/cache failures. */
+.playback-hero-fixed {
+  isolation: isolate;
+  background: #090909 !important;
+}
+.playback-hero-fixed .playback-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% center;
+  opacity: 1;
+}
+.playback-hero-fixed .landing-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.77) 40%, rgba(0,0,0,.32) 68%, rgba(0,0,0,.08) 100%),
+    linear-gradient(0deg, rgba(0,0,0,.68) 0%, transparent 66%) !important;
+  pointer-events: none;
+}
+.playback-hero-fixed::before,
+.playback-hero-fixed::after {
+  display: none !important;
+}
+.playback-hero-fixed .container {
+  position: relative;
+  z-index: 2;
+}
+.playback-hero-fixed h1 {
+  font-family: "Playfair Display", serif !important;
+}
+.playback-hero-fixed .hero-copy,
+.playback-hero-fixed .hero-kicker,
+.playback-hero-fixed .landing-stat-row {
+  font-family: "DM Sans", sans-serif !important;
+}
+@media (max-width: 767.98px) {
+  .playback-hero-fixed .playback-hero-photo {
+    object-position: 66% center;
+  }
+  .playback-hero-fixed .landing-bg {
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.91) 0%, rgba(0,0,0,.67) 58%, rgba(0,0,0,.24) 100%),
+      linear-gradient(0deg, rgba(0,0,0,.78) 0%, transparent 70%) !important;
+  }
+}
