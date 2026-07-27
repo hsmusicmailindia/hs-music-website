@@ -1656,3 +1656,14 @@ font-weight:bold;
 .playback-hero-fixed::before,.playback-hero-fixed::after{z-index:1}
 .playback-hero-fixed .container{z-index:2}
 @media(max-width:767px){.playback-hero-fixed .playback-hero-photo{object-position:63% center}}
+
+/* Playback Singing hero — final verified fallback */
+.playback-hero-final{
+  background-size:cover!important;
+  background-position:center 24%!important;
+  background-repeat:no-repeat!important;
+  background-color:#090909!important;
+}
+@media (max-width:767px){
+  .playback-hero-final{background-position:63% center!important;}
+}
