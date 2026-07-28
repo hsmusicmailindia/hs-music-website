@@ -1750,3 +1750,24 @@ font-weight:bold;
       linear-gradient(0deg, rgba(0,0,0,.78) 0%, transparent 70%) !important;
   }
 }
+
+/* Playback hero subject alignment — right-centre desktop, safe mobile crop */
+.playback-hero-fixed .playback-hero-photo {
+  inset: 0 auto 0 7% !important;
+  width: 108% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+@media (max-width: 767.98px) {
+  .playback-hero-fixed .playback-hero-photo {
+    inset: 0 auto 0 -8% !important;
+    width: 132% !important;
+    object-position: 43% center !important;
+  }
+  .playback-hero-fixed .landing-bg {
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.70) 54%, rgba(0,0,0,.24) 100%),
+      linear-gradient(0deg, rgba(0,0,0,.80) 0%, transparent 70%) !important;
+  }
+}
