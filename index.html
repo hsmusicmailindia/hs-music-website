@@ -211,86 +211,60 @@
     </style>
 
   
-<style id="mm-august-2026-final-overrides">
-#music-ministers .mm-title{
-  display:block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-}
-#music-ministers .mm-ticker-final{
-  width:100%;
+
+
+
+
+
+
+<style id="music-ministers-clean-style">
+#music-ministers{
+  padding:58px 0 34px;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(206,166,73,.13),transparent 34%),
+    linear-gradient(180deg,#0b0b0e 0%,#111116 100%);
+  color:#fff;
   overflow:hidden;
-  white-space:nowrap;
-  margin-top:24px;
-  padding:7px 0;
-  border-top:1px solid rgba(215,178,90,.22);
-  border-bottom:1px solid rgba(215,178,90,.22);
-  background:rgba(215,178,90,.045);
 }
-#music-ministers .mm-ticker-final .mm-ticker-track{
-  display:inline-flex;
-  width:max-content;
-  animation:mmTickerContinuous 24s linear infinite !important;
-  will-change:transform;
-}
-#music-ministers .mm-ticker-final span{
-  display:inline-block !important;
-  padding:0 42px !important;
-  padding-left:42px !important;
-  animation:none !important;
-  transform:none !important;
-  font-size:11px !important;
-  line-height:1.45 !important;
-  letter-spacing:.02em;
-  font-weight:500 !important;
-  color:#e8d9a8;
-}
-@keyframes mmTickerContinuous{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-@media (max-width:600px){
-  #music-ministers .mm-title{font-size:22px !important;line-height:1.25}
-  #music-ministers .mm-ticker-final span{font-size:10px !important;padding:0 28px !important}
-  #music-ministers .mm-ticker-final{padding:6px 0}
-}
-@media (prefers-reduced-motion: reduce){
-  #music-ministers .mm-ticker-final .mm-ticker-track{animation-duration:32s !important}
-}
-</style>
-
-
-<style id="mm-ticker-never-stop-fix">
-#music-ministers .mm-ticker-final{
-  overflow:hidden !important;
-  white-space:nowrap !important;
-}
-#music-ministers .mm-ticker-final .mm-ticker-track{
-  display:flex !important;
-  flex-wrap:nowrap !important;
-  width:max-content !important;
-  min-width:max-content !important;
-  animation:mmNeverStopTicker 18s linear infinite !important;
-  animation-play-state:running !important;
-  will-change:transform !important;
-}
-#music-ministers .mm-ticker-final:hover .mm-ticker-track,
-#music-ministers .mm-ticker-final:focus-within .mm-ticker-track{
-  animation-play-state:running !important;
-}
-#music-ministers .mm-ticker-final .mm-ticker-track span{
-  flex:0 0 auto !important;
-  white-space:nowrap !important;
-}
-@keyframes mmNeverStopTicker{
-  0%{transform:translate3d(0,0,0)}
-  100%{transform:translate3d(-50%,0,0)}
-}
-/* Keep it moving even when the device has reduced-motion enabled */
-@media (prefers-reduced-motion: reduce){
-  #music-ministers .mm-ticker-final .mm-ticker-track{
-    animation:mmNeverStopTicker 22s linear infinite !important;
-  }
+#music-ministers .mm-head{text-align:center;max-width:900px;margin:0 auto 32px;padding:0 18px}
+#music-ministers .mm-kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d6b35c;font-weight:700;margin-bottom:10px}
+#music-ministers .mm-title{font-size:clamp(30px,4.5vw,56px);line-height:1.05;font-weight:800;margin:0 0 12px;letter-spacing:-.02em}
+#music-ministers .mm-sub{font-size:15px;color:#b9b9c1;margin:0}
+#music-ministers .mm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,420px));gap:28px;justify-content:center;padding:0 18px}
+#music-ministers .mm-wrap{min-width:0}
+#music-ministers .mm-number{text-align:center;color:#d8b75f;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+#music-ministers .mm-card{height:500px;position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(215,178,90,.35);background:#15151a;box-shadow:0 20px 60px rgba(0,0,0,.42)}
+#music-ministers .mm-reveal{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;text-align:center}
+#music-ministers .mm-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#music-ministers .mm-photo.deepanjali{object-position:center 25%}
+#music-ministers .mm-photo.shrishti{object-position:center 30%}
+#music-ministers .mm-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 25%,rgba(0,0,0,.18) 48%,rgba(0,0,0,.88) 82%,rgba(0,0,0,.98) 100%)}
+#music-ministers .mm-info{position:relative;z-index:2;width:100%;padding:24px 22px 25px;text-shadow:0 2px 14px rgba(0,0,0,.75)}
+#music-ministers .mm-info h3{font-size:28px;margin:0 0 4px;font-weight:800}
+#music-ministers .mm-role{font-size:13px;color:#f2dfaa;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+#music-ministers .mm-grade{display:inline-block;margin:10px 0 8px;padding:5px 12px;border:1px solid rgba(215,178,90,.65);border-radius:999px;color:#f3d98d;font-size:12px;font-weight:800}
+#music-ministers .mm-score{font-size:22px;font-weight:800}
+#music-ministers .mm-break{font-size:12px;color:#e2e2e7;margin-top:4px}
+#music-ministers .mm-branch{font-size:12px;color:#bdbdc5;margin-top:8px}
+#music-ministers canvas{position:absolute;inset:0;width:100%;height:100%;z-index:5;touch-action:none;cursor:crosshair}
+#music-ministers .mm-hint{text-align:center;color:#92929a;font-size:11px;margin-top:10px}
+#music-ministers .mm-ticker{margin-top:30px;border-top:1px solid rgba(215,178,90,.2);border-bottom:1px solid rgba(215,178,90,.2);background:rgba(215,178,90,.045);overflow:hidden;white-space:nowrap;padding:7px 0}
+#music-ministers .mm-track{display:flex;width:max-content;animation:mmTicker 20s linear infinite;will-change:transform}
+#music-ministers .mm-track span{flex:0 0 auto;padding:0 42px;font-size:10px;line-height:1.45;color:#e8d9a8;font-weight:500}
+@keyframes mmTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+#mmPop{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.78);padding:20px}
+#mmPop.show{display:flex}
+#mmPop .mm-popbox{width:min(92vw,480px);background:linear-gradient(160deg,#17171d,#09090c);border:1px solid rgba(215,178,90,.45);border-radius:24px;padding:30px;text-align:center;color:#fff;box-shadow:0 24px 80px rgba(0,0,0,.65)}
+#mmPop h3{color:#f1d37c;margin:8px 0}
+#mmPop p{color:#ddd;font-size:14px}
+#mmPop button{margin-top:14px;border:0;border-radius:999px;padding:10px 22px;font-weight:700;cursor:pointer}
+.mm-confetti{position:fixed;z-index:100000;top:-30px;pointer-events:none;font-style:normal}
+@media(max-width:820px){
+  #music-ministers{padding:44px 0 26px}
+  #music-ministers .mm-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  #music-ministers .mm-card{height:460px}
+  #music-ministers .mm-info h3{font-size:24px}
+  #music-ministers .mm-track span{font-size:9px;padding:0 28px}
 }
 </style>
 
@@ -385,34 +359,78 @@
         <div class="hero-note"><span></span> Scroll to discover</div>
       </section>
 
-<section class="music-minister-reveal" id="music-ministers" aria-labelledby="music-minister-title">
-        <div class="container position-relative">
-          <div class="text-center mb-5" data-aos="fade-up">
-            <span class="mm-eyebrow">HS MUSIC • Music Minister 2026</span>
-            <h2 class="mm-title" id="music-minister-title">🏆 HS MUSIC MUSIC MINISTERS — AUGUST 2026</h3><div class="mm-role">Selected Music Minister • Grade A++</div><div class="mm-branch"><i class="bi bi-geo-alt"></i> Preetam Nagar Branch</div><div class="mm-scoreline"><span class="mm-score-pill gold">72 / 100</span><span class="mm-score-pill">Audition 65</span><span class="mm-score-pill">Audience +7</span></div><div class="mm-audience-note">7 audience members gave Shrishti their highest score.</div><div class="mm-badge">HS MUSIC • MUSIC MINISTER 2026</div></div>
-                  </div><canvas aria-label="Scratch to reveal Shrishti Singh"></canvas>
-                </div><div class="mm-hint"><i class="bi bi-hand-index-thumb"></i> Scratch with your finger or mouse to reveal</div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="100">
-              <div class="mm-card-wrap">
-                <div class="mm-number">Music Minister 02</div>
-                <div class="mm-scratch-card" data-winner="Deepanjali Mishra">
-                  <div class="mm-winner-content">
-                    <img class="mm-winner-photo" src="assets/images/music-ministers/deepanjali-mishra.jpg" alt="Deepanjali Mishra performing on stage">
-                    <div class="mm-winner-shade"></div>
-                    <div class="mm-winner-info"><div class="mm-crown"><i class="bi bi-stars"></i></div><h3>Deepanjali Mishra</h3><div class="mm-role">Selected Music Minister • Grade A++</div><div class="mm-branch"><i class="bi bi-geo-alt"></i> Preetam Nagar Branch</div><div class="mm-scoreline"><span class="mm-score-pill gold">76 / 100</span><span class="mm-score-pill">Audition 68</span><span class="mm-score-pill">Audience +8</span></div><div class="mm-audience-note">8 audience members gave Deepanjali their highest score.</div><div class="mm-badge">HS MUSIC • MUSIC MINISTER 2026</div></div>
-                  </div><canvas aria-label="Scratch to reveal Deepanjali Mishra"></canvas>
-                </div><div class="mm-hint"><i class="bi bi-hand-index-thumb"></i> Scratch with your finger or mouse to reveal</div>
-              </div>
-            </div>
+
+<section id="music-ministers">
+  <div class="mm-head">
+    <div class="mm-kicker">HS MUSIC • MUSIC MINISTER • AUGUST 2026</div>
+    <h2 class="mm-title">🏆 HS MUSIC MUSIC MINISTERS — AUGUST 2026</h2>
+    <p class="mm-sub">Two artists. Two journeys. Scratch each card to reveal the selected Music Ministers.</p>
+  </div>
+
+  <div class="mm-grid">
+    <div class="mm-wrap">
+      <div class="mm-number">Music Minister 01</div>
+      <div class="mm-card" data-winner="Deepanjali Mishra" data-score="76/100">
+        <div class="mm-reveal">
+          <img class="mm-photo deepanjali" src="assets/images/music-ministers/deepanjali-mishra.jpg" alt="Deepanjali Mishra">
+          <div class="mm-shade"></div>
+          <div class="mm-info">
+            <h3>Deepanjali Mishra</h3>
+            <div class="mm-role">Selected Music Minister</div>
+            <div class="mm-grade">GRADE A++</div>
+            <div class="mm-score">76 / 100</div>
+            <div class="mm-break">Audition Marks: 68 • Audience: +8</div>
+            <div class="mm-break">8 audience members gave Deepanjali their highest score</div>
+            <div class="mm-branch">Preetam Nagar Branch • HS MUSIC</div>
           </div>
         </div>
-      
-<div class="mm-ticker mm-ticker-final" aria-label="Music Minister onboarding message">
-  <div class="mm-ticker-track"><span>✨ Congratulations, Music Minister! Your professional artist journey begins now. Please contact the HS MUSIC Office to complete your onboarding formalities. 🎵</span><span aria-hidden="true">✨ Congratulations, Music Minister! Your professional artist journey begins now. Please contact the HS MUSIC Office to complete your onboarding formalities. 🎵</span></div>
-</div>
+        <canvas aria-label="Scratch to reveal Music Minister 01"></canvas>
+      </div>
+      <div class="mm-hint">Scratch with your finger or mouse to reveal</div>
+    </div>
+
+    <div class="mm-wrap">
+      <div class="mm-number">Music Minister 02</div>
+      <div class="mm-card" data-winner="Shrishti Singh" data-score="72/100">
+        <div class="mm-reveal">
+          <img class="mm-photo shrishti" src="assets/images/music-ministers/shrishti-singh.jpg" alt="Shrishti Singh">
+          <div class="mm-shade"></div>
+          <div class="mm-info">
+            <h3>Shrishti Singh</h3>
+            <div class="mm-role">Selected Music Minister</div>
+            <div class="mm-grade">GRADE A++</div>
+            <div class="mm-score">72 / 100</div>
+            <div class="mm-break">Audition Marks: 65 • Audience: +7</div>
+            <div class="mm-break">7 audience members gave Shrishti their highest score</div>
+            <div class="mm-branch">Preetam Nagar Branch • HS MUSIC</div>
+          </div>
+        </div>
+        <canvas aria-label="Scratch to reveal Music Minister 02"></canvas>
+      </div>
+      <div class="mm-hint">Scratch with your finger or mouse to reveal</div>
+    </div>
+  </div>
+
+  <div class="mm-ticker" aria-label="Music Minister onboarding message">
+    <div class="mm-track">
+      <span>✨ Congratulations, Music Minister! Your professional artist journey begins now. Please contact the HS MUSIC Office to complete your onboarding formalities. 🎵</span>
+      <span aria-hidden="true">✨ Congratulations, Music Minister! Your professional artist journey begins now. Please contact the HS MUSIC Office to complete your onboarding formalities. 🎵</span>
+    </div>
+  </div>
 </section>
+
+<div id="mmPop">
+  <div class="mm-popbox">
+    <div style="font-size:42px">🎉🏆</div>
+    <h3 id="mmPopTitle">Congratulations!</h3>
+    <p id="mmPopText"></p>
+    <button type="button" id="mmPopClose">Continue</button>
+  </div>
+</div>
+
+
+
+
 
       <section class="section section-cream" id="about">
         <div class="container">
@@ -1160,5 +1178,109 @@
       })();
     </script>
 
-  </body>
+  
+<script id="music-ministers-clean-script">
+(function(){
+  const popup = document.getElementById('mmPop');
+  const popTitle = document.getElementById('mmPopTitle');
+  const popText = document.getElementById('mmPopText');
+  const popClose = document.getElementById('mmPopClose');
+  if(popClose) popClose.addEventListener('click',()=>popup.classList.remove('show'));
+
+  function celebrate(){
+    const items=['✨','🎉','★'];
+    for(let i=0;i<42;i++){
+      const el=document.createElement('i');
+      el.className='mm-confetti';
+      el.textContent=items[i%items.length];
+      el.style.left=(Math.random()*100)+'vw';
+      el.style.fontSize=(12+Math.random()*18)+'px';
+      el.style.transition='transform 1.8s ease-out, opacity 1.8s';
+      document.body.appendChild(el);
+      requestAnimationFrame(()=>{
+        el.style.transform='translate('+(Math.random()*160-80)+'px,'+(innerHeight+90)+'px) rotate('+(Math.random()*720)+'deg)';
+        el.style.opacity='0';
+      });
+      setTimeout(()=>el.remove(),1900);
+    }
+  }
+
+  document.querySelectorAll('#music-ministers .mm-card').forEach(card=>{
+    const canvas=card.querySelector('canvas');
+    const ctx=canvas.getContext('2d');
+    let drawing=false, revealed=false, scratched=false;
+
+    function paintCover(){
+      const r=card.getBoundingClientRect();
+      const dpr=window.devicePixelRatio||1;
+      canvas.width=Math.max(1,Math.round(r.width*dpr));
+      canvas.height=Math.max(1,Math.round(r.height*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      ctx.globalCompositeOperation='source-over';
+      const g=ctx.createLinearGradient(0,0,r.width,r.height);
+      g.addColorStop(0,'#ead38a');
+      g.addColorStop(.28,'#9c7b35');
+      g.addColorStop(.52,'#d7b25a');
+      g.addColorStop(.75,'#7c612b');
+      g.addColorStop(1,'#f0db97');
+      ctx.fillStyle=g;
+      ctx.fillRect(0,0,r.width,r.height);
+
+      ctx.fillStyle='rgba(15,15,18,.92)';
+      ctx.textAlign='center';
+      ctx.font='800 18px Arial, sans-serif';
+      ctx.fillText('SCRATCH TO REVEAL',r.width/2,r.height/2-2);
+      ctx.font='600 11px Arial, sans-serif';
+      ctx.fillText('HS MUSIC • AUGUST 2026',r.width/2,r.height/2+24);
+
+      ctx.globalCompositeOperation='destination-out';
+    }
+
+    function point(ev){
+      const r=canvas.getBoundingClientRect();
+      const p=ev.touches?ev.touches[0]:ev;
+      return [p.clientX-r.left,p.clientY-r.top];
+    }
+
+    function scratch(ev){
+      if(!drawing || revealed) return;
+      ev.preventDefault();
+      scratched=true;
+      const [x,y]=point(ev);
+      ctx.beginPath();
+      ctx.arc(x,y,30,0,Math.PI*2);
+      ctx.fill();
+    }
+
+    function finish(){
+      if(!scratched || revealed) return;
+      drawing=false;
+      revealed=true;
+      canvas.style.transition='opacity .55s ease';
+      canvas.style.opacity='0';
+      setTimeout(()=>canvas.style.pointerEvents='none',600);
+
+      if(popTitle && popText && popup){
+        popTitle.textContent='Congratulations, '+card.dataset.winner+'!';
+        popText.textContent='You have been selected as an HS MUSIC Music Minister — August 2026. Grade A++ • Final Score '+card.dataset.score+'. Your professional artist journey begins now.';
+        popup.classList.add('show');
+      }
+      celebrate();
+    }
+
+    canvas.addEventListener('mousedown',()=>{drawing=true});
+    canvas.addEventListener('mousemove',scratch);
+    window.addEventListener('mouseup',finish);
+
+    canvas.addEventListener('touchstart',e=>{drawing=true;scratch(e)},{passive:false});
+    canvas.addEventListener('touchmove',scratch,{passive:false});
+    canvas.addEventListener('touchend',finish);
+
+    paintCover();
+    window.addEventListener('resize',()=>{ if(!revealed) paintCover(); });
+  });
+})();
+</script>
+
+</body>
 </html>
