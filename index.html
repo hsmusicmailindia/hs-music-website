@@ -210,7 +210,91 @@
       @media(max-width:767px){.music-minister-reveal{padding:68px 0}.mm-scratch-card{min-height:300px}.mm-card-wrap+.mm-card-wrap{margin-top:10px}}
     </style>
 
-  </head>
+  
+<style id="mm-august-2026-final-overrides">
+#music-ministers .mm-title{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+#music-ministers .mm-ticker-final{
+  width:100%;
+  overflow:hidden;
+  white-space:nowrap;
+  margin-top:24px;
+  padding:7px 0;
+  border-top:1px solid rgba(215,178,90,.22);
+  border-bottom:1px solid rgba(215,178,90,.22);
+  background:rgba(215,178,90,.045);
+}
+#music-ministers .mm-ticker-final .mm-ticker-track{
+  display:inline-flex;
+  width:max-content;
+  animation:mmTickerContinuous 24s linear infinite !important;
+  will-change:transform;
+}
+#music-ministers .mm-ticker-final span{
+  display:inline-block !important;
+  padding:0 42px !important;
+  padding-left:42px !important;
+  animation:none !important;
+  transform:none !important;
+  font-size:11px !important;
+  line-height:1.45 !important;
+  letter-spacing:.02em;
+  font-weight:500 !important;
+  color:#e8d9a8;
+}
+@keyframes mmTickerContinuous{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@media (max-width:600px){
+  #music-ministers .mm-title{font-size:22px !important;line-height:1.25}
+  #music-ministers .mm-ticker-final span{font-size:10px !important;padding:0 28px !important}
+  #music-ministers .mm-ticker-final{padding:6px 0}
+}
+@media (prefers-reduced-motion: reduce){
+  #music-ministers .mm-ticker-final .mm-ticker-track{animation-duration:32s !important}
+}
+</style>
+
+
+<style id="mm-ticker-never-stop-fix">
+#music-ministers .mm-ticker-final{
+  overflow:hidden !important;
+  white-space:nowrap !important;
+}
+#music-ministers .mm-ticker-final .mm-ticker-track{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  width:max-content !important;
+  min-width:max-content !important;
+  animation:mmNeverStopTicker 18s linear infinite !important;
+  animation-play-state:running !important;
+  will-change:transform !important;
+}
+#music-ministers .mm-ticker-final:hover .mm-ticker-track,
+#music-ministers .mm-ticker-final:focus-within .mm-ticker-track{
+  animation-play-state:running !important;
+}
+#music-ministers .mm-ticker-final .mm-ticker-track span{
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+}
+@keyframes mmNeverStopTicker{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(-50%,0,0)}
+}
+/* Keep it moving even when the device has reduced-motion enabled */
+@media (prefers-reduced-motion: reduce){
+  #music-ministers .mm-ticker-final .mm-ticker-track{
+    animation:mmNeverStopTicker 22s linear infinite !important;
+  }
+}
+</style>
+
+</head>
   <body>
     <div aria-label="Loading" id="preloader">
       <div class="loader-mark">HS</div>
@@ -305,18 +389,7 @@
         <div class="container position-relative">
           <div class="text-center mb-5" data-aos="fade-up">
             <span class="mm-eyebrow">HS MUSIC • Music Minister 2026</span>
-            <h2 class="mm-title" id="music-minister-title">Two artists. Two reveals.<br><em>One new beginning.</em></h2>
-            <p class="mm-intro">Scratch each card to reveal the students selected from HS MUSIC Preetam Nagar Branch for the Music Minister Program.</p>
-          </div>
-          <div class="row g-4 g-lg-5 justify-content-center">
-            <div class="col-md-6 col-lg-5" data-aos="fade-up">
-              <div class="mm-card-wrap">
-                <div class="mm-number">Music Minister 01</div>
-                <div class="mm-scratch-card" data-winner="Shrishti Singh">
-                  <div class="mm-winner-content">
-                    <img class="mm-winner-photo" src="assets/images/music-ministers/shrishti-singh.jpg" alt="Shrishti Singh performing on stage">
-                    <div class="mm-winner-shade"></div>
-                    <div class="mm-winner-info"><div class="mm-crown"><i class="bi bi-stars"></i></div><h3>Shrishti Singh</h3><div class="mm-role">Selected Music Minister • Grade A++</div><div class="mm-branch"><i class="bi bi-geo-alt"></i> Preetam Nagar Branch</div><div class="mm-scoreline"><span class="mm-score-pill gold">72 / 100</span><span class="mm-score-pill">Audition 65</span><span class="mm-score-pill">Audience +7</span></div><div class="mm-audience-note">7 audience members gave Shrishti their highest score.</div><div class="mm-badge">HS MUSIC • MUSIC MINISTER 2026</div></div>
+            <h2 class="mm-title" id="music-minister-title">🏆 HS MUSIC MUSIC MINISTERS — AUGUST 2026</h3><div class="mm-role">Selected Music Minister • Grade A++</div><div class="mm-branch"><i class="bi bi-geo-alt"></i> Preetam Nagar Branch</div><div class="mm-scoreline"><span class="mm-score-pill gold">72 / 100</span><span class="mm-score-pill">Audition 65</span><span class="mm-score-pill">Audience +7</span></div><div class="mm-audience-note">7 audience members gave Shrishti their highest score.</div><div class="mm-badge">HS MUSIC • MUSIC MINISTER 2026</div></div>
                   </div><canvas aria-label="Scratch to reveal Shrishti Singh"></canvas>
                 </div><div class="mm-hint"><i class="bi bi-hand-index-thumb"></i> Scratch with your finger or mouse to reveal</div>
               </div>
@@ -335,7 +408,11 @@
             </div>
           </div>
         </div>
-      <div class="mm-ticker"><span>✨ Congratulations, Music Minister! Your professional artist journey begins now. Please contact the HS MUSIC Office to complete your onboarding formalities. 🎵</span></div></section>
+      
+<div class="mm-ticker mm-ticker-final" aria-label="Music Minister onboarding message">
+  <div class="mm-ticker-track"><span>✨ Congratulations, Music Minister! Your professional artist journey begins now. Please contact the HS MUSIC Office to complete your onboarding formalities. 🎵</span><span aria-hidden="true">✨ Congratulations, Music Minister! Your professional artist journey begins now. Please contact the HS MUSIC Office to complete your onboarding formalities. 🎵</span></div>
+</div>
+</section>
 
       <section class="section section-cream" id="about">
         <div class="container">
