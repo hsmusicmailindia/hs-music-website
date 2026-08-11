@@ -268,6 +268,22 @@
 }
 </style>
 
+
+<style id="mm-title-sub-fix">
+#music-ministers .mm-title-sub{
+  margin-top:8px;
+  font-size:clamp(16px,2vw,24px);
+  line-height:1.2;
+  font-weight:700;
+  letter-spacing:.20em;
+  color:#fff;
+  text-align:center;
+}
+@media(max-width:600px){
+  #music-ministers .mm-title-sub{font-size:15px;letter-spacing:.16em}
+}
+</style>
+
 </head>
   <body>
     <div aria-label="Loading" id="preloader">
@@ -363,7 +379,8 @@
 <section id="music-ministers">
   <div class="mm-head">
     <div class="mm-kicker">HS MUSIC • MUSIC MINISTER • AUGUST 2026</div>
-    <h2 class="mm-title">🏆 AUDITION RESULT — MUSIC MINISTERS</h2>
+    <h2 class="mm-title">🏆 AUDITION RESULT</h2>
+    <div class="mm-title-sub">MUSIC MINISTERS</div>
     <p class="mm-sub">Two artists. Two journeys. Scratch each card to reveal the selected Music Ministers.</p>
   </div>
 
@@ -1179,12 +1196,15 @@
     </script>
 
   
+
+
+
 <script id="music-ministers-clean-script">
 (function(){
-  const popup = document.getElementById('mmPop');
-  const popTitle = document.getElementById('mmPopTitle');
-  const popText = document.getElementById('mmPopText');
-  const popClose = document.getElementById('mmPopClose');
+  const popup=document.getElementById('mmPop');
+  const popTitle=document.getElementById('mmPopTitle');
+  const popText=document.getElementById('mmPopText');
+  const popClose=document.getElementById('mmPopClose');
   if(popClose) popClose.addEventListener('click',()=>popup.classList.remove('show'));
 
   function celebrate(){
@@ -1195,7 +1215,7 @@
       el.textContent=items[i%items.length];
       el.style.left=(Math.random()*100)+'vw';
       el.style.fontSize=(12+Math.random()*18)+'px';
-      el.style.transition='transform 1.8s ease-out, opacity 1.8s';
+      el.style.transition='transform 1.8s ease-out,opacity 1.8s';
       document.body.appendChild(el);
       requestAnimationFrame(()=>{
         el.style.transform='translate('+(Math.random()*160-80)+'px,'+(innerHeight+90)+'px) rotate('+(Math.random()*720)+'deg)';
@@ -1207,8 +1227,9 @@
 
   document.querySelectorAll('#music-ministers .mm-card').forEach(card=>{
     const canvas=card.querySelector('canvas');
-    const ctx=canvas.getContext('2d');
-    let drawing=false, revealed=false, scratched=false;
+    const ctx=canvas.getContext('2d',{willReadFrequently:true});
+    let drawing=false, revealed=false;
+    let lastCheck=0;
 
     function paintCover(){
       const r=card.getBoundingClientRect();
@@ -1218,21 +1239,16 @@
       ctx.setTransform(dpr,0,0,dpr,0,0);
       ctx.globalCompositeOperation='source-over';
       const g=ctx.createLinearGradient(0,0,r.width,r.height);
-      g.addColorStop(0,'#ead38a');
-      g.addColorStop(.28,'#9c7b35');
-      g.addColorStop(.52,'#d7b25a');
-      g.addColorStop(.75,'#7c612b');
+      g.addColorStop(0,'#ead38a'); g.addColorStop(.28,'#9c7b35');
+      g.addColorStop(.52,'#d7b25a'); g.addColorStop(.75,'#7c612b');
       g.addColorStop(1,'#f0db97');
-      ctx.fillStyle=g;
-      ctx.fillRect(0,0,r.width,r.height);
-
+      ctx.fillStyle=g; ctx.fillRect(0,0,r.width,r.height);
       ctx.fillStyle='rgba(15,15,18,.92)';
       ctx.textAlign='center';
-      ctx.font='800 18px Arial, sans-serif';
+      ctx.font='800 18px Arial,sans-serif';
       ctx.fillText('SCRATCH TO REVEAL',r.width/2,r.height/2-2);
-      ctx.font='600 11px Arial, sans-serif';
-      ctx.fillText('HS MUSIC • AUGUST 2026',r.width/2,r.height/2+24);
-
+      ctx.font='600 11px Arial,sans-serif';
+      ctx.fillText('SCRATCH AT LEAST 50%',r.width/2,r.height/2+24);
       ctx.globalCompositeOperation='destination-out';
     }
 
@@ -1242,25 +1258,26 @@
       return [p.clientX-r.left,p.clientY-r.top];
     }
 
-    function scratch(ev){
-      if(!drawing || revealed) return;
-      ev.preventDefault();
-      scratched=true;
-      const [x,y]=point(ev);
-      ctx.beginPath();
-      ctx.arc(x,y,30,0,Math.PI*2);
-      ctx.fill();
+    function erasedPercent(){
+      const w=canvas.width,h=canvas.height;
+      const data=ctx.getImageData(0,0,w,h).data;
+      let transparent=0,total=0;
+      // Sample pixels for performance; alpha < 64 counts as scratched.
+      for(let i=3;i<data.length;i+=4*16){
+        total++;
+        if(data[i]<64) transparent++;
+      }
+      return total ? transparent/total : 0;
     }
 
-    function finish(){
-      if(!scratched || revealed) return;
-      drawing=false;
+    function reveal(){
+      if(revealed) return;
       revealed=true;
+      drawing=false;
       canvas.style.transition='opacity .55s ease';
       canvas.style.opacity='0';
       setTimeout(()=>canvas.style.pointerEvents='none',600);
-
-      if(popTitle && popText && popup){
+      if(popTitle&&popText&&popup){
         popTitle.textContent='Congratulations, '+card.dataset.winner+'!';
         popText.textContent='You have been selected as an HS MUSIC Music Minister — August 2026. Grade A++ • Final Score '+card.dataset.score+'. Your professional artist journey begins now.';
         popup.classList.add('show');
@@ -1268,16 +1285,34 @@
       celebrate();
     }
 
-    canvas.addEventListener('mousedown',()=>{drawing=true});
+    function checkThreshold(force){
+      if(revealed) return;
+      const now=performance.now();
+      if(!force && now-lastCheck<180) return;
+      lastCheck=now;
+      if(erasedPercent()>=0.50) reveal();
+    }
+
+    function scratch(ev){
+      if(!drawing||revealed) return;
+      ev.preventDefault();
+      const [x,y]=point(ev);
+      ctx.beginPath();
+      ctx.arc(x,y,24,0,Math.PI*2);
+      ctx.fill();
+      checkThreshold(false);
+    }
+
+    canvas.addEventListener('mousedown',e=>{drawing=true;scratch(e)});
     canvas.addEventListener('mousemove',scratch);
-    window.addEventListener('mouseup',finish);
+    window.addEventListener('mouseup',()=>{drawing=false;checkThreshold(true)});
 
     canvas.addEventListener('touchstart',e=>{drawing=true;scratch(e)},{passive:false});
     canvas.addEventListener('touchmove',scratch,{passive:false});
-    canvas.addEventListener('touchend',finish);
+    canvas.addEventListener('touchend',()=>{drawing=false;checkThreshold(true)});
 
     paintCover();
-    window.addEventListener('resize',()=>{ if(!revealed) paintCover(); });
+    window.addEventListener('resize',()=>{if(!revealed) paintCover()});
   });
 })();
 </script>
